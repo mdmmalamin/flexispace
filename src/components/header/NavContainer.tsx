@@ -6,22 +6,16 @@ import { useEffect, useState } from "react";
 import menu from "../../assets/icons/menu.svg";
 import close from "../../assets/icons/close.svg";
 import Container from "../ui/Container";
+import { manus } from "../../routes/menu.routes";
 
 const NavContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activePage, setActivePage] = useState("");
-  const location = useLocation();
+  const location: any = useLocation();
 
   useEffect(() => {
     setActivePage(location);
   }, [location]);
-
-  const manus = [
-    { name: "Home", path: "/" },
-    { name: "Meeting Rooms", path: "meeting-rooms" },
-    { name: "About Us", path: "about-us" },
-    { name: "Contact Us", path: "contact-us" },
-  ];
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";

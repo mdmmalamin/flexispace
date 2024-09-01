@@ -11,3 +11,12 @@
   font-family: "Manrope", system-ui;
   user-select: none;
 }
+
+.text-shadow {
+  text-shadow: 1px 1px 2px #0e1a1f, 0 0 1em #0e1a1f, 0 0 0.2em #0e1a1f;
+}
+
+.shadow-center {
+  -webkit-box-shadow: 0px 0px 5px 6px #C8F90477; /* For older iOS devices */
+  box-shadow: 0px 0px 6px 6px #C8F90477; /* Standard */
+}

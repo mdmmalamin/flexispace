@@ -10,8 +10,7 @@ export default {
       colors: {
         primary: "#6967FB",
         secondary: "#C8F904",
-        // tertiary: "#6967FB",
-        // accent: "#8D96A0",
+        tertiary: "#FF6F61",
         dark: "#0E1A1F",
         light: "#f5f5f5",
       },
