@@ -8,12 +8,12 @@ export default {
       },
 
       colors: {
-        primary: "#6967FB",
-        secondary: "#C8F904",
+        primary: "#5285E8",
+        secondary: "#BBFB4C",
         tertiary: "#FF6F61",
         accent: "#6B7280",
-        dark: "#0E1A1F",
-        light: "#f5f5f5",
+        dark: "#181818",
+        light: "#f0f5f4",
       },
     },
   },

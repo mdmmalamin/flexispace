@@ -4,6 +4,7 @@ import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import App from "../App";
 import Error404 from "../pages/Error404";
+import MeetingRooms from "../pages/MeetingRooms";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +17,15 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about", //? Relative path
+        path: "meeting-rooms",
+        element: <MeetingRooms />,
+      },
+      {
+        path: "about-us", //? Relative path
         element: <About />,
       },
       {
-        path: "contact",
+        path: "contact-us",
         element: <Contact />,
       },
     ],
