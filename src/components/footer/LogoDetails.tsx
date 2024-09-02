@@ -12,7 +12,7 @@ const LogoDetails = () => {
         </span>
       </Link>
 
-      <Description className="text-justify">
+      <Description className="text-justify !text-white">
         We work with a passion of taking challenges and creating new ones in
         advertising sector.
       </Description>

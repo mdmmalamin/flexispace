@@ -7,19 +7,20 @@ import WhyChooseUsContainer from "../components/features/landing/WhyChooseUsCont
 
 const Home = () => {
   return (
-    <div>
+    <>
       <HeroContainer />
+      <div className="space-y-16">
+        <ServiceAdsContainer />
 
-      <ServiceAdsContainer />
+        <FeaturedRoomsContainer />
 
-      <FeaturedRoomsContainer />
+        <WhyChooseUsContainer />
 
-      <WhyChooseUsContainer />
+        <OurSolutionsContainer />
 
-      <OurSolutionsContainer />
-
-      <TestimonialsContainer />
-    </div>
+        <TestimonialsContainer />
+      </div>
+    </>
   );
 };
 

@@ -5,25 +5,26 @@ import TimeOutline from "../../../assets/icons/TimeOutline";
 import AdsCard from "../../cards/AdsCard";
 import Container from "../../ui/Container";
 
+const adsData = [
+  {
+    icon: <TimeOutline size="size-16" />,
+    title: "Real-Time Availability",
+  },
+  {
+    icon: <CalenderOutline size="size-16" />,
+    title: "Instant Booking Confirmation",
+  },
+  {
+    icon: <ScheduleOutline size="size-16" />,
+    title: "Flexible Scheduling",
+  },
+  {
+    icon: <SupportOutline size="size-16" />,
+    title: "24/7 Support",
+  },
+];
+
 const ServiceAdsContainer = () => {
-  const adsData = [
-    {
-      icon: <TimeOutline size="size-16" />,
-      title: "Real-Time Availability",
-    },
-    {
-      icon: <CalenderOutline size="size-16" />,
-      title: "Instant Booking Confirmation",
-    },
-    {
-      icon: <ScheduleOutline size="size-16" />,
-      title: "Flexible Scheduling",
-    },
-    {
-      icon: <SupportOutline size="size-16" />,
-      title: "24/7 Support",
-    },
-  ];
   return (
     <div className="py-16 bg-dark">
       <Container className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:!px-16">

@@ -1,9 +1,5 @@
+import { TAdsProps } from "../../types/TCardProps";
 import BlurBg from "../ui/BlurBg";
-
-type TAdsProps = {
-  icon: React.ReactNode;
-  title: string;
-};
 
 const AdsCard = ({ icon, title }: TAdsProps) => {
   return (

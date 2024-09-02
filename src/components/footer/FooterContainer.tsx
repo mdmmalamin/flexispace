@@ -28,7 +28,7 @@ const FooterContainer = () => {
           </section>
         </div>
 
-        <Description className="text-center mt-6 py-6 border-t border-secondary/50 w-[70%] mx-auto">
+        <Description className="text-center mt-6 py-6 border-t border-secondary/50 w-[70%] mx-auto !text-white">
           Copyright ©FlexiSpace {new Date().getFullYear()} All Right Reserved
         </Description>
       </Container>

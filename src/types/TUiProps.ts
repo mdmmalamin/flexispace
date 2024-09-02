@@ -4,6 +4,7 @@ export type TUiProps = {
   children: ReactNode;
   className?: string;
   style?: object;
+  icon?: ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 

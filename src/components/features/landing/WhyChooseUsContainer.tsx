@@ -6,22 +6,22 @@ import Headline from "../../ui/Headline";
 import Subtitle from "../../ui/Subtitle";
 import Title from "../../ui/Title";
 
-const WhyChooseUsContainer = () => {
-  const whyUsData = [
-    {
-      icon: <CalenderOutline />,
-      title: "Seamless Booking Experience",
-      description:
-        "Enjoy a hassle-free booking process with our intuitive interface that makes reservations quick and easy.",
-    },
-    {
-      icon: <SecureOutline />,
-      title: "Secure Transactions",
-      description:
-        "Your payments are processed through highly secure gateways, ensuring your financial data is always safe.",
-    },
-  ];
+const whyUsData = [
+  {
+    icon: <CalenderOutline />,
+    title: "Seamless Booking Experience",
+    description:
+      "Enjoy a hassle-free booking process with our intuitive interface that makes reservations quick and easy.",
+  },
+  {
+    icon: <SecureOutline />,
+    title: "Secure Transactions",
+    description:
+      "Your payments are processed through highly secure gateways, ensuring your financial data is always safe.",
+  },
+];
 
+const WhyChooseUsContainer = () => {
   return (
     <section className="bg-white py-12">
       <Container>

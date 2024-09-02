@@ -1,3 +1,4 @@
+import ArrowOutline from "../../../assets/icons/ArrowOutline";
 import hero from "../../../assets/images/hero.png";
 import BlurBg from "../../ui/BlurBg";
 import Button from "../../ui/Button";
@@ -25,7 +26,7 @@ const HeroContainer = () => {
           </Subtitle>
         </BlurBg>
 
-        <Button>Book Now</Button>
+        <Button icon={<ArrowOutline />}>Book Now</Button>
       </div>
     </Container>
   );
