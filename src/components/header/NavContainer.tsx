@@ -1,5 +1,4 @@
-import FS_logo from "../../assets/flexispace.png";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, Location, NavLink, useLocation } from "react-router-dom";
 import scrollToTop from "../../utils/scrollToTop";
 import { useEffect, useState } from "react";
 
@@ -11,7 +10,7 @@ import { manus } from "../../routes/menu.routes";
 const NavContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activePage, setActivePage] = useState("");
-  const location: any = useLocation();
+  const location: Location = useLocation();
 
   useEffect(() => {
     setActivePage(location);
