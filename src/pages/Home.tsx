@@ -1,7 +1,9 @@
+import HeroContainer from "../components/features/landing/HeroContainer";
+
 const Home = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <HeroContainer />
     </div>
   );
 };

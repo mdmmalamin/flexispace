@@ -1,11 +1,6 @@
-import { ReactNode } from "react";
+import { TUiProps } from "../../types/TUiProps";
 
-type TDescriptionProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-const Description = ({ children, className }: TDescriptionProps) => {
+const Description = ({ children, className }: TUiProps) => {
   return (
     <p className={`text-xs xs:text-sm md:text-base text-light ${className}`}>
       {children}

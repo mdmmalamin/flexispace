@@ -1,14 +1,10 @@
-import { ReactNode } from "react";
+import { TUiProps } from "../../types/TUiProps";
 
-type TContainerProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-const Container = ({ children, className }: TContainerProps) => {
+const Container = ({ children, className, style }: TUiProps) => {
   return (
     <div
       className={`max-w-[1280px] mx-auto px-2.5 lg:px-0 ${className}`}
+      style={style}
     >
       {children}
     </div>

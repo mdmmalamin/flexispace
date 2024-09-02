@@ -1,8 +1,9 @@
-const BlurBg = ({ children, className, id }) => {
+import { TUiProps } from "../../types/TUiProps";
+
+const BlurBg = ({ children, className }: TUiProps) => {
   return (
     <div
-      id={id}
-      className={`bg-white/10 backdrop-blur-sm p-2 rounded-md border border-white/20 ${className}`}
+      className={`bg-white/10 backdrop-blur-md p-2 rounded-md border border-white/20 ${className}`}
     >
       {children}
     </div>

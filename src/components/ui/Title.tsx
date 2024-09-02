@@ -1,11 +1,6 @@
-import { ReactNode } from "react";
+import { TUiProps } from "../../types/TUiProps";
 
-type TTitleProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-const Title = ({ children, className }: TTitleProps) => {
+const Title = ({ children, className }: TUiProps) => {
   return (
     <h2
       className={`text-2xl md:text-4xl lg:text-5xl font-semibold capitalize text-center text-dark ${className}`}

@@ -10,7 +10,7 @@ const FooterContainer = () => {
   return (
     <footer id="footer" className="pt-16 mt-16 bg-primary">
       <Container>
-        <section className="grid gap-6 grid-cols-12 justify-items-start">
+        <div className="grid gap-6 grid-cols-12 justify-items-start">
           <section className="col-span-12 md:col-span-3 space-y-6">
             <LogoDetails />
           </section>
@@ -26,7 +26,7 @@ const FooterContainer = () => {
           <section className="col-span-12 md:col-span-3 space-y-6">
             <ContactUs />
           </section>
-        </section>
+        </div>
 
         <Description className="text-center mt-6 py-6 border-t border-secondary/50 w-[70%] mx-auto">
           Copyright ©FlexiSpace {new Date().getFullYear()} All Right Reserved
