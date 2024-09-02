@@ -20,7 +20,7 @@ const HeroContainer = () => {
         </Headline>
 
         <BlurBg className="w-fit text-center mx-auto py-6 md:!px-12">
-          <Subtitle className="text-shadow">
+          <Subtitle className="text-shadow !text-light">
             Efficient, hassle-free room booking for all your meeting needs
           </Subtitle>
         </BlurBg>
