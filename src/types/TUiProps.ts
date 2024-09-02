@@ -6,3 +6,5 @@ export type TUiProps = {
   style?: object;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
+
+export type TSvgProps = { size?: string; className?: string };

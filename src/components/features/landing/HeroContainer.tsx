@@ -14,13 +14,13 @@ const HeroContainer = () => {
       {/* <img className="w-full object-cover object-center" src={hero} alt="" /> */}
 
       <div className="px-2.5 sm:px-6 py-16 md:py-40 space-y-6 bg-gradient-to-b from-dark/50 to-dark/10">
-        <Headline className="text-white">
+        <Headline className="text-white text-shadow">
           <span>Book Your Ideal Meeting </span>
           <span className="text-primary text-nowrap">Room with Ease</span>
         </Headline>
 
         <BlurBg className="w-fit text-center mx-auto py-6 md:!px-12">
-          <Subtitle>
+          <Subtitle className="text-shadow">
             Efficient, hassle-free room booking for all your meeting needs
           </Subtitle>
         </BlurBg>
