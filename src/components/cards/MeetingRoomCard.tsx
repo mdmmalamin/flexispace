@@ -9,7 +9,7 @@ const MeetingRoomCard = ({
   pricePerSlot,
 }: TFeaturedRoomProps) => {
   return (
-    <BlurBg className="hover:bg-secondary/20 duration-300 p-4 group grid gap-4 grid-cols-12">
+    <BlurBg className="hover:bg-secondary/20 duration-300 sm:p-4 group grid gap-2 sm:gap-4 grid-cols-12">
       <div className="overflow-hidden rounded-md col-span-4 sm:col-span-3">
         <img
           className="rounded-md w-full h-full object-cover object-center group-hover:scale-110 duration-300"

@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
-import { companyRoutes } from "../../routes/footer.routes";
-import scrollToTop from "../../utils/scrollToTop";
+import { termsRoutes } from "../../../routes/footer.routes";
+import scrollToTop from "../../../utils/scrollToTop";
 
-const Company = () => {
+const TermsAndSettings = () => {
   return (
     <>
-      <h4 className="text-left text-white text-xl font-bold">Company</h4>
+      <h4 className="text-left text-white text-xl font-bold">
+        Terms and settings
+      </h4>
 
       <ul className="text-nowrap space-y-1">
-        {companyRoutes?.map((item, idx) => (
+        {termsRoutes?.map((item, idx) => (
           <li key={idx}>
             <Link
               to={item?.path}
@@ -24,4 +26,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default TermsAndSettings;

@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import App from "../App";
 import Error404 from "../pages/Error404";
 import MeetingRooms from "../pages/MeetingRooms";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "contact-us",
         element: <Contact />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },

@@ -1,20 +1,14 @@
-import { Link, Location, NavLink, useLocation } from "react-router-dom";
-import scrollToTop from "../../utils/scrollToTop";
+import { Link, NavLink } from "react-router-dom";
+import scrollToTop from "../../../utils/scrollToTop";
 import { useEffect, useState } from "react";
 
-import menu from "../../assets/icons/menu.svg";
-import close from "../../assets/icons/close.svg";
-import Container from "../ui/Container";
-import { manus } from "../../routes/menu.routes";
+import menu from "../../../assets/icons/menu.svg";
+import close from "../../../assets/icons/close.svg";
+import Container from "../../ui/Container";
+import { manus } from "../../../routes/menu.routes";
 
 const NavContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activePage, setActivePage] = useState("");
-  const location: Location = useLocation();
-
-  useEffect(() => {
-    setActivePage(location);
-  }, [location]);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -24,17 +18,12 @@ const NavContainer = () => {
   return (
     <>
       <nav className="sticky top-0 z-50 py-2.5 md:py-5 shadow-lg shadow-primary/10 bg-primary backdrop-blur-3xl">
-        <Container className="grid gap-4 grid-cols-12 justify-items-center content-center">
+        <Container className="grid gap-4 grid-cols-12 justify-items-center content-center items-center">
           <Link
             to="/"
             className="col-span-6 md:col-span-3 justify-self-start my-auto"
             onClick={scrollToTop}
           >
-            {/* <img
-              className="h-16"
-              src={FS_logo}
-              alt="Picture of Devs Den BD logo."
-            /> */}
             <span className="text-white font-extrabold text-2xl border px-2.5 bg-secondary/15">
               FlexiSpace
             </span>
@@ -47,11 +36,7 @@ const NavContainer = () => {
                 <NavLink
                   to={item?.path}
                   key={idx}
-                  className={`${
-                    `${item?.path}` === activePage
-                      ? "border-secondary text-secondary"
-                      : "border-transparent"
-                  } text-light py-2 px-5 hover:bg-primary/10 border-b hover:border-secondary hover:text-secondary transition duration-300`}
+                  className={`border-secondary  border-transparent text-light py-2 px-5 hover:bg-primary/10 border-b hover:border-secondary hover:text-secondary transition duration-300`}
                   onClick={scrollToTop}
                 >
                   {item?.name}
@@ -60,9 +45,12 @@ const NavContainer = () => {
             </div>
           </div>
 
-          <button className="text-nowrap col-span-6 md:col-span-3 justify-self-end !hidden md:!block">
+          <Link
+            to="login"
+            className="text-nowrap col-span-6 md:col-span-3 justify-self-end !hidden md:!block text-white font-semibold"
+          >
             Login
-          </button>
+          </Link>
 
           {/* Mobile Menu Icon */}
           <div className="col-span-6 justify-self-end self-center !block md:!hidden">
@@ -98,7 +86,14 @@ const NavContainer = () => {
         </div>
 
         <div className="w-full text-center my-6">
-          <button className="text-nowrap mx-auto">Let&apos;s Talk</button>
+          <button className="text-nowrap mx-auto">
+            <Link
+              to="login"
+              className="text-nowrap col-span-6 md:col-span-3 justify-self-end !block md:!hidden text-white font-semibold"
+            >
+              Login
+            </Link>
+          </button>
         </div>
       </div>
     </>

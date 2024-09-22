@@ -1,11 +1,11 @@
 export type TFilterProps = {
-  price: string;
-  setPrice: React.Dispatch<React.SetStateAction<string>>;
-  capacity: string;
-  setCapacity: React.Dispatch<React.SetStateAction<string>>;
+  price: number;
+  setPrice: React.Dispatch<React.SetStateAction<number>>;
+  capacity: number;
+  setCapacity: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export type TSortProps = {
-  price: string;
-  setPrice: React.Dispatch<React.SetStateAction<string>>;
+  price: number;
+  setPrice: React.Dispatch<React.SetStateAction<number>>;
 };

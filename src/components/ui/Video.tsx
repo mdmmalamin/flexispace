@@ -1,4 +1,6 @@
-const Video = ({ src, poster, className }) => {
+import { TUiProps } from "../../types/TUiProps";
+
+const Video = ({ src, poster, className }: TUiProps) => {
   return (
     <video
       className={className}

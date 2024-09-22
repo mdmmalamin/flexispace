@@ -61,7 +61,7 @@ const roomsData = [
 
 const RoomItemsContainer = () => {
   return (
-    <div>
+    <div className="space-y-4">
       {roomsData?.map((item, idx) => (
         <MeetingRoomCard {...item} key={idx} />
       ))}

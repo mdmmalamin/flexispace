@@ -1,6 +1,6 @@
-import phone from "../../assets/icons/phone.svg";
+import phone from "../../../assets/icons/phone.svg";
 // import navigation from "../../assets/icons/navigation.svg";
-import mapPin from "../../assets/icons/map-pin.svg";
+import mapPin from "../../../assets/icons/map-pin.svg";
 
 const ContactUs = () => {
   return (
@@ -9,11 +9,11 @@ const ContactUs = () => {
 
       <ul className="text-light space-y-2">
         <li className="text-nowrap flex gap-2.5 items-center">
-          <img src={phone} alt="" /> +880 17777 00000
+          <img src={phone} alt="" /> +880 17730 553105
         </li>
         <li className="text-nowrap flex gap-2.5 items-center">
           <img src={phone} alt="" />
-          Info@devsdenbd.com
+          Info@flexispace.com
         </li>
         <li className="flex gap-2.5 items-center">
           <img src={mapPin} alt="" /> Mirpur - 1, Dhaka - 1216

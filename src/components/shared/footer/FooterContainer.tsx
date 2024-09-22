@@ -1,5 +1,5 @@
-import Container from "../ui/Container";
-import Description from "../ui/Description";
+import Container from "../../ui/Container";
+import Description from "../../ui/Description";
 
 import LogoDetails from "./LogoDetails";
 import Company from "./Company";

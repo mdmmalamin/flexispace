@@ -1,6 +1,6 @@
-import NavContainer from "../header/NavContainer";
+import NavContainer from "../shared/header/NavContainer";
 import { Outlet } from "react-router-dom";
-import FooterContainer from "../footer/FooterContainer";
+import FooterContainer from "../shared/footer/FooterContainer";
 
 const MainLayout = () => {
   return (

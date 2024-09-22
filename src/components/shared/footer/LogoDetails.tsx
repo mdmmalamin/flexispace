@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import scrollToTop from "../../utils/scrollToTop";
-import Description from "../ui/Description";
-import { socialLinks } from "../../routes/footer.routes";
+import scrollToTop from "../../../utils/scrollToTop";
+import Description from "../../ui/Description";
+import { socialLinks } from "../../../routes/footer.routes";
 
 const LogoDetails = () => {
   return (
