@@ -3,6 +3,7 @@ import Input from "../components/form/Input";
 import Container from "../components/ui/Container";
 import Title from "../components/ui/Title";
 import Button from "../components/ui/Button";
+import { Link } from "react-router-dom";
 
 type FormValues = {
   email: string;
@@ -23,7 +24,7 @@ const Login = () => {
   // };
 
   return (
-    <Container>
+    <Container className="my-16">
       <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-secondary before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-primary after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
         <Title>Please Login</Title>
 
@@ -52,10 +53,15 @@ const Login = () => {
             />
           </div>
 
-          <div className="flex justify-end">
-            <Button className="px-8">Log In</Button>
-          </div>
+          <Button className="px-8">Log In</Button>
         </form>
+
+        <p className="text-center my-6">
+          Don't have an account?{" "}
+          <Link to="/register" className="font-semibold text-blue-600">
+            Sign Up
+          </Link>
+        </p>
       </div>
     </Container>
   );

@@ -16,7 +16,6 @@ const Input = ({
   register,
   ...props
 }: TInputProps) => {
-  console.log(props);
   return (
     <input
       className={`${className} mt-1 p-2 w-full border rounded-md`}
