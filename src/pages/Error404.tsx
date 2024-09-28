@@ -4,7 +4,7 @@ import "../styles/error404.css";
 
 const Error404 = () => {
   return (
-    <div className="mx-auto h-screen flex flex-col items-center justify-center bg-dark/25">
+    <div className="mx-auto h-screen flex flex-col items-center justify-center bg-dark/25 space-y-12">
       <div className="main_wrapper">
         <div className="main">
           <div className="antenna">
