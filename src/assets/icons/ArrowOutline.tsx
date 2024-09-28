@@ -1,9 +1,11 @@
-const ArrowOutline = () => {
+import { TSvgProps } from "../../types/TUiProps";
+
+const ArrowOutline = ({ className }: TSvgProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 19"
-      className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-light text-light ease-linear duration-300 rounded-full border border-dart/75 group-hover:border-none p-2 rotate-45"
+      className={`w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-light text-light ease-linear duration-300 rounded-full border border-dart/75 group-hover:border-none p-2 rotate-45 ${className}`}
     >
       <path
         className="fill-dark group-hover:fill-dark"
