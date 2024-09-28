@@ -62,7 +62,7 @@ const OurStoryContainer = () => {
               key={idx}
             >
               <div
-                className="relative flex h-full w-full transform items-end border-2 border-primary bg-white duration-500 group-hover:scale-105 bg-cover bg-center"
+                className="relative flex h-full w-full transform items-end border-2 border-accent hover:border-secondary bg-white duration-500 group-hover:scale-105 bg-cover bg-center"
                 style={{ background: `url(${ourStoryCard})` }}
               >
                 <BlurBg className="w-full h-full p-4 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 flex flex-col justify-end gap-6">

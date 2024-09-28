@@ -45,7 +45,7 @@ const OurMissionContainer = () => {
         </div>
 
         <img
-          className="basis-2/3 max-h-96 object-cover object-bottom w-full lg:w-fit"
+          className="basis-2/3 max-h-96 object-cover object-bottom w-full lg:w-fit rounded-lg"
           src="https://assets.iwgplc.com/image/upload/c_fill,f_auto,q_auto,w_513,h_384,g_auto:subject,ar_4:3/v1695809502/WebsiteImagery/Brands/Regus/About-Us/India_About_us_image_1.jpg"
           alt="Picture of Our Mission section's meeting room."
         />
