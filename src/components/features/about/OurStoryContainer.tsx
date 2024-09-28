@@ -2,10 +2,12 @@ import Container from "../../ui/Container";
 import Description from "../../ui/Description";
 import Headline from "../../ui/Headline";
 import ourStory from "../../../assets/images/our_story.jpg";
+import ourStoryCard from "../../../assets/images/our_story_card.jpg";
 import Title from "../../ui/Title";
 import CompanySolid from "../../../assets/icons/CompanySolid";
 import Button from "../../ui/Button";
 import ArrowOutline from "../../../assets/icons/ArrowOutline";
+import BlurBg from "../../ui/BlurBg";
 
 const ourStories = [
   {
@@ -59,18 +61,25 @@ const OurStoryContainer = () => {
               className="group relative block w-72 md:w-96 mx-auto h-72 md:h-96"
               key={idx}
             >
-              <div className="relative flex h-full w-full transform items-end border-2 border-primary bg-white duration-500 group-hover:scale-105">
-                <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+              <div
+                className="relative flex h-full w-full transform items-end border-2 border-primary bg-white duration-500 group-hover:scale-105 bg-cover bg-center"
+                style={{ background: `url(${ourStoryCard})` }}
+              >
+                <BlurBg className="w-full h-full p-4 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 flex flex-col justify-end gap-6">
                   <CompanySolid />
 
-                  <Title>{item.title}</Title>
-                </div>
+                  <Title className="!text-left text-white">{item.title}</Title>
+                </BlurBg>
 
-                <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
-                  <Title className="!text-left">{item.title}</Title>
+                <BlurBg className="w-full h-full absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+                  <Title className="!text-left text-secondary">
+                    {item.title}
+                  </Title>
 
-                  <Description>{item.description}</Description>
-                </div>
+                  <Description className="text-white">
+                    {item.description}
+                  </Description>
+                </BlurBg>
               </div>
             </div>
           ))}
@@ -93,7 +102,10 @@ const OurStoryContainer = () => {
             </Description>
           </div>
 
-          <Button className="!mt-0" icon={<ArrowOutline />}>
+          <Button
+            className="!mt-0 bg-primary text-white"
+            icon={<ArrowOutline fill="fill-white" />}
+          >
             Book Now
           </Button>
         </div>

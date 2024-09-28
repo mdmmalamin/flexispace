@@ -10,4 +10,4 @@ export type TUiProps = {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
-export type TSvgProps = { size?: string; className?: string };
+export type TSvgProps = { size?: string; className?: string; fill?: string };
