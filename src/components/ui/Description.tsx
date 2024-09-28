@@ -2,9 +2,9 @@ import { TUiProps } from "../../types/TUiProps";
 
 const Description = ({ children, className }: TUiProps) => {
   return (
-    <p className={`text-xs xs:text-sm md:text-base text-accent ${className}`}>
+    <div className={`text-xs xs:text-sm md:text-base text-accent ${className}`}>
       {children}
-    </p>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ import ContactUs from "./ContactUs";
 
 const FooterContainer = () => {
   return (
-    <footer id="footer" className="pt-16 mt-16 bg-primary">
+    <footer id="footer" className="pt-16 bg-primary">
       <Container>
         <div className="grid gap-6 grid-cols-12 justify-items-start">
           <section className="col-span-12 md:col-span-3 space-y-6">

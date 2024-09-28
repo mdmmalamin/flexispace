@@ -30,7 +30,7 @@ const ourGoals = [
 const OurMissionContainer = () => {
   return (
     <>
-      <Container className="flex items-start justify-center gap-20">
+      <Container className="lg:flex items-start justify-center gap-20 space-y-6 lg:space-y-0">
         <div className="space-y-6 basis-1/3">
           <Headline className="!text-left">
             Our Mission<span className="text-primary">.</span>
@@ -45,7 +45,7 @@ const OurMissionContainer = () => {
         </div>
 
         <img
-          className="basis-2/3 max-h-96 object-cover object-bottom"
+          className="basis-2/3 max-h-96 object-cover object-bottom w-full lg:w-fit"
           src="https://assets.iwgplc.com/image/upload/c_fill,f_auto,q_auto,w_513,h_384,g_auto:subject,ar_4:3/v1695809502/WebsiteImagery/Brands/Regus/About-Us/India_About_us_image_1.jpg"
           alt="Picture of Our Mission section's meeting room."
         />
@@ -57,7 +57,7 @@ const OurMissionContainer = () => {
             {ourGoals?.map((item, idx) => (
               <BlurBg
                 key={idx}
-                className="text-center space-y-2 hover:border-secondary bg-transparent hover:bg-white/10 duration-300 py-4 sm:py-12"
+                className="text-center space-y-2 hover:border-secondary bg-transparent hover:bg-white/10 duration-300 py-4 sm:py-6"
               >
                 <Title className="text-secondary md:px-10">{item.title}</Title>
                 <Description className="text-white/70">{item.description}</Description>

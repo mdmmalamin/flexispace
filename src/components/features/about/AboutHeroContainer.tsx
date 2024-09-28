@@ -12,19 +12,19 @@ const AboutHeroContainer = () => {
         </h1>
 
         <Description className="col-span-12 space-y-6 md:space-y-0 md:flex justify-end gap-10">
-          <p className="basis-1/4">
+          <div className="basis-1/4">
             For more than 30 years, we’ve helped businesses find and create the
             perfect workspace for their people.
-          </p>
+          </div>
 
-          <p className="basis-1/4">
+          <div className="basis-1/4">
             Our extensive network of locations enables companies of all sizes to
             work wherever, and however they need.
-          </p>
+          </div>
 
-          <p className="animate-bounce flex justify-end items-end">
+          <div className="animate-bounce flex justify-end items-end">
             <ArrowOutline className="scale-150 rotate-[180deg] bg-white" />
-          </p>
+          </div>
         </Description>
       </Container>
     </div>
