@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <HeroContainer />
-      <div className="space-y-16">
+      <div className="space-y-24">
         <ServiceAdsContainer />
 
         <FeaturedRoomsContainer />

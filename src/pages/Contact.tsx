@@ -1,8 +1,10 @@
+import GetInTouchContainer from "../components/features/contactUs/GetInTouchContainer";
+
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact Page</h1>
-    </div>
+    <main className="space-y-24">
+      <GetInTouchContainer />
+    </main>
   );
 };
 
