@@ -7,6 +7,9 @@ import Error404 from "../pages/Error404";
 import MeetingRooms from "../pages/MeetingRooms";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import { routeGenerator } from "../utils/routeGenerator";
+import { adminPaths } from "./admin.routes";
+import DashboardLayout from "../components/layouts/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +17,15 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <Error404 />,
     children: [
+      {
+        path: "/admin",
+        element: (
+          // <ProtectedRoute role="admin">
+          <DashboardLayout />
+          // </ProtectedRoute>
+        ),
+        children: routeGenerator(adminPaths),
+      },
       {
         path: "",
         element: <Home />,
