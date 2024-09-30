@@ -4,6 +4,11 @@ import Container from "../components/ui/Container";
 import Title from "../components/ui/Title";
 import Button from "../components/ui/Button";
 import { Link } from "react-router-dom";
+import { useLoginMutation } from "../redux/features/auth/authApi";
+import { toast } from "sonner";
+import { verifyToken } from "../utils/verifyToken";
+import { setUser, TUser } from "../redux/features/auth/authSlice";
+import { useAppDispatch } from "../redux/hooks";
 
 type FormValues = {
   email: string;
@@ -12,8 +17,31 @@ type FormValues = {
 
 const Login = () => {
   const { register, handleSubmit } = useForm<FormValues>();
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const dispatch = useAppDispatch();
+
+  const [login, { data, error }] = useLoginMutation();
+  console.log({ data, error });
+
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     console.log(data);
+
+    const userInfo = {
+      email: "web@programming-hero.com",
+      password: "ph-password",
+    };
+
+    const toastId = toast.loading("Logging in");
+
+    try {
+      const res = await login(userInfo).unwrap();
+      console.log(res);
+
+      const user = verifyToken(res.token) as TUser;
+      dispatch(setUser({ user: user, token: res.token }));
+      toast.success("Logged in", { id: toastId, duration: 2000 });
+    } catch (error) {
+      toast.error("Something went wrong", { id: toastId, duration: 2000 });
+    }
   };
 
   // const defaultValues = {
