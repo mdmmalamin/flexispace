@@ -8,7 +8,8 @@ import MeetingRooms from "../pages/MeetingRooms";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import { routeGenerator } from "../utils/routeGenerator";
-import { adminPaths } from "./admin.routes";
+import { adminRoutes } from "./admin.routes";
+import { userRoutes } from "./user.routes";
 import DashboardLayout from "../components/layouts/DashboardLayout";
 import ProtectedRoute from "../components/layouts/ProtectedRoute";
 
@@ -25,17 +26,17 @@ const router = createBrowserRouter([
             <DashboardLayout />
           </ProtectedRoute>
         ),
-        children: routeGenerator(adminPaths),
+        children: routeGenerator(adminRoutes),
       },
-      // {
-      //   path: "/user",
-      //   element: (
-      //     <ProtectedRoute role="user">
-      //       <DashboardLayout />
-      //     </ProtectedRoute>
-      //   ),
-      //   children: routeGenerator(adminPaths),
-      // },
+      {
+        path: "/user",
+        element: (
+          <ProtectedRoute role="user">
+            <DashboardLayout />
+          </ProtectedRoute>
+        ),
+        children: routeGenerator(userRoutes),
+      },
       {
         path: "",
         element: <Home />,

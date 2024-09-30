@@ -1,19 +1,15 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import { adminPaths } from "../../routes/admin.routes";
-import { sidebarItemGenerator } from "../../utils/sidebarItemGenerator";
+import useSidebarResponsive from "../../hooks/useSidebarResponsive";
 
 const DashboardLayout = () => {
-  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
-  const sidebarItems = sidebarItemGenerator(adminPaths, "admin");
-  console.log(sidebarItems);
+  const { isOpenSidebar, setIsOpenSidebar } = useSidebarResponsive(false);
+
   return (
     <div className="grid grid-cols-12">
       <Sidebar
         isOpenSidebar={isOpenSidebar}
         setIsOpenSidebar={setIsOpenSidebar}
-        items={sidebarItems}
       />
 
       <main

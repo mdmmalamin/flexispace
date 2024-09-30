@@ -7,7 +7,7 @@ import BookingManagement from "../pages/admin/BookingManagement";
 import RoomManagement from "../pages/admin/RoomManagement";
 import SlotsManagement from "../pages/admin/SlotsManagement";
 
-export const adminPaths = [
+export const adminRoutes = [
   {
     name: "Dashboard",
     path: "dashboard",

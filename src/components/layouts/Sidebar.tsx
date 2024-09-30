@@ -1,39 +1,46 @@
 import { NavLink } from "react-router-dom";
 import CloseOutline from "../../assets/icons/CloseOutline";
 import OpenOutline from "../../assets/icons/OpenOutline";
-import { ReactNode, useEffect, useState } from "react";
-
-type TItemsProps = { name: string; path: string; icon: ReactNode };
+import { useAppSelector } from "../../redux/hooks";
+import { TUser, useCurrentToken } from "../../redux/features/auth/authSlice";
+import { verifyToken } from "../../utils/verifyToken";
+import { sidebarItemGenerator } from "../../utils/sidebarItemGenerator";
+import { adminRoutes } from "../../routes/admin.routes";
+import { userRoutes } from "../../routes/user.routes";
+import { TSidebarItem } from "../../types";
 
 type TSideBarProps = {
   isOpenSidebar: boolean;
   setIsOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
-  items: [TItemsProps];
 };
 
-const Sidebar = ({ isOpenSidebar, setIsOpenSidebar, items }: TSideBarProps) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+const userRole = {
+  ADMIN: "admin",
+  USER: "user",
+};
 
-  console.log([screenWidth, isOpenSidebar]);
+const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }: TSideBarProps) => {
+  const token = useAppSelector(useCurrentToken);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
+  let user;
 
-    if (screenWidth >= 764) {
-      () => setIsOpenSidebar(!isOpenSidebar);
-    } else {
-      () => setIsOpenSidebar(!isOpenSidebar);
-    }
+  if (token) {
+    user = verifyToken(token);
+  }
 
-    window.addEventListener("resize", handleResize);
+  let sidebarItems;
 
-    // Cleanup the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isOpenSidebar, setIsOpenSidebar, screenWidth]);
+  switch ((user as TUser)!.role) {
+    case userRole.ADMIN:
+      sidebarItems = sidebarItemGenerator(adminRoutes, userRole.ADMIN);
+      break;
+    case userRole.USER:
+      sidebarItems = sidebarItemGenerator(userRoutes, userRole.USER);
+      break;
+
+    default:
+      break;
+  }
 
   return (
     <aside
@@ -56,14 +63,14 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar, items }: TSideBarProps) => {
         )}
       </button>
 
-      <ul className="">
-        {items?.map((item: TItemsProps, idx: number) => (
+      <ul>
+        {sidebarItems?.map((item: TSidebarItem, idx: number) => (
           <li key={idx}>
             <NavLink
               to={item.path}
               className={({ isActive }) =>
                 `${
-                  isActive ? "bg-primary text-primary" : "bg-primary/10"
+                  isActive ? "bg-primary text-primary " : "bg-primary/10"
                 } rounded-md hover:bg-primary hover:text-white duration-300`
               }
             >

@@ -27,7 +27,8 @@ const Login = () => {
     console.log(data);
 
     const userInfo = {
-      email: "web@programming-hero.com",
+      // email: "web@programming-hero.com", //! admin
+      email: "amin@gmail.com", //! user
       password: "ph-password",
     };
 
@@ -41,18 +42,11 @@ const Login = () => {
       dispatch(setUser({ user: user, token: res.token }));
       toast.success("Logged in", { id: toastId, duration: 2000 });
 
-      navigate(`/${user.role}/dashboard`);
+      navigate("/");
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }
   };
-
-  // const defaultValues = {
-  //   admin: {
-  //     email: "test@fs.com",
-  //     password: "12345678",
-  //   },
-  // };
 
   return (
     <Container className="my-16">
