@@ -6,6 +6,8 @@ import menu from "../../../assets/icons/menu.svg";
 import close from "../../../assets/icons/close.svg";
 import Container from "../../ui/Container";
 import { manus } from "../../../routes/menu.routes";
+import NavLogo from "./NavLogo";
+import UserAvatar from "./UserAvatar";
 
 const NavContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,20 +19,12 @@ const NavContainer = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 py-2.5 md:py-5 shadow-lg shadow-primary/10 bg-primary backdrop-blur-3xl">
-        <Container className="grid gap-4 grid-cols-12 justify-items-center content-center items-center">
-          <Link
-            to="/"
-            className="col-span-6 md:col-span-3 justify-self-start my-auto"
-            onClick={scrollToTop}
-          >
-            <span className="text-white font-extrabold text-2xl border px-2.5 bg-secondary/15">
-              FlexiSpace
-            </span>
-          </Link>
+      <nav className="sticky top-0 z-50 shadow-lg shadow-primary/10 bg-primary backdrop-blur-3xl">
+        <Container className="grid gap-4 grid-cols-12 justify-items-center content-center items-center bg-primary py-2.5 md:py-5">
+          <NavLogo />
 
           {/* Desktop Device */}
-          <div className="col-span-6 hidden md:block">
+          <div className="col-span-6 hidden md:block text-nowrap">
             <div className="flex gap-2.5 justify-between items-center text-lg font-semibold">
               {manus?.map((item, idx) => (
                 <NavLink
@@ -45,12 +39,7 @@ const NavContainer = () => {
             </div>
           </div>
 
-          <Link
-            to="login"
-            className="text-nowrap col-span-6 md:col-span-3 justify-self-end !hidden md:!block text-white font-semibold"
-          >
-            Login
-          </Link>
+          <UserAvatar />
 
           {/* Mobile Menu Icon */}
           <div className="col-span-6 justify-self-end self-center !block md:!hidden">
