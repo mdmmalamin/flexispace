@@ -3,7 +3,7 @@ import Input from "../components/form/Input";
 import Container from "../components/ui/Container";
 import Title from "../components/ui/Title";
 import Button from "../components/ui/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../redux/features/auth/authApi";
 import { toast } from "sonner";
 import { verifyToken } from "../utils/verifyToken";
@@ -17,6 +17,7 @@ type FormValues = {
 
 const Login = () => {
   const { register, handleSubmit } = useForm<FormValues>();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const [login, { data, error }] = useLoginMutation();
@@ -39,6 +40,8 @@ const Login = () => {
       const user = verifyToken(res.token) as TUser;
       dispatch(setUser({ user: user, token: res.token }));
       toast.success("Logged in", { id: toastId, duration: 2000 });
+
+      navigate(`/${user.role}/dashboard`);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }

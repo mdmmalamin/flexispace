@@ -1,9 +1,10 @@
+import CreateRoomContainer from "../../components/features/adminFeatures/CreateRoomContainer";
 import RoomTableContainer from "../../components/features/adminFeatures/RoomTableContainer";
 
 const RoomManagement = () => {
   return (
     <div className="">
-      <h1>RoomManagement</h1>
+      <CreateRoomContainer />
 
       <RoomTableContainer />
     </div>
