@@ -4,20 +4,29 @@ type TSubmit = {
   children: ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
-  submitType?: "success" | "danger";
+  submitType?: "success" | "danger" | "default";
 };
 
 const type = {
   success: "success",
   danger: "danger",
+  default: "default",
 };
 
-const FSSubmit = ({ children, onClick, className, submitType }: TSubmit) => {
+const FSSubmit = ({
+  children,
+  onClick,
+  className,
+  submitType = "default",
+}: TSubmit) => {
+  console.log(submitType);
   let bg;
   if (submitType === type.success) {
     bg = "bg-green-600 hover:bg-green-600/70";
   } else if (submitType === type.danger) {
     bg = "bg-red-600 hover:bg-red-600/70";
+  } else if (submitType === type.default) {
+    bg = "!p-2 bg-primary text-white rounded-md hover:bg-primary/80";
   }
 
   return (

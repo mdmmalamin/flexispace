@@ -11,6 +11,7 @@ import {
   useGetSingleRoomQuery,
   useUpdateRoomMutation,
 } from "../../../../redux/features/admin/roomManagement.api";
+import EditSolid from "../../../../assets/icons/EditSolid";
 
 type TRoomFormValues = {
   name: string;
@@ -21,7 +22,7 @@ type TRoomFormValues = {
   amenities: string[];
 };
 
-const UpdateRoomContainer = ({ id }: { id: string }) => {
+const UpdateRoomModal = ({ id }: { id: string }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { register, handleSubmit } = useForm<TRoomFormValues>();
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
@@ -85,12 +86,9 @@ const UpdateRoomContainer = ({ id }: { id: string }) => {
 
   return (
     <div className="">
-      <button
-        onClick={updateModal}
-        className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/80 duration-300"
-      >
-        Update
-      </button>
+      <FSSubmit onClick={updateModal}>
+        <EditSolid />
+      </FSSubmit>
 
       <FSModal
         isModalOpen={isModalOpen}
@@ -216,4 +214,4 @@ const UpdateRoomContainer = ({ id }: { id: string }) => {
   );
 };
 
-export default UpdateRoomContainer;
+export default UpdateRoomModal;
