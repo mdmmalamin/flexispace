@@ -18,7 +18,7 @@ type TRoomFormValues = {
   amenities: string[];
 };
 
-const CreateRoomContainer = () => {
+const CreateRoomModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { register, handleSubmit } = useForm<TRoomFormValues>();
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
@@ -184,4 +184,4 @@ const CreateRoomContainer = () => {
   );
 };
 
-export default CreateRoomContainer;
+export default CreateRoomModal;
