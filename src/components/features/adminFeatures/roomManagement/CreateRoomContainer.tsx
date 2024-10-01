@@ -54,7 +54,7 @@ const CreateRoomContainer = () => {
       pricePerSlot: +data.pricePerSlot,
       amenities: [...options!.map((item) => item.value)],
     };
-    console.log(room)
+    console.log(room);
 
     try {
       const res = await createRoom(room);
@@ -84,7 +84,7 @@ const CreateRoomContainer = () => {
         <Title>Add A New Room</Title>
 
         <form
-          className="space-y-4"
+          className="space-y-6 mt-6"
           onSubmit={handleSubmit(onSubmit)}
           onKeyDown={handleKeyDown}
         >

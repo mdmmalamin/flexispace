@@ -1,5 +1,6 @@
 import LoadingAnimation from "../../../../assets/icons/LoadingAnimation";
 import { useGetAllRoomsQuery } from "../../../../redux/features/admin/roomManagement.api";
+import DeleteRoomContainer from "./DeleteRoomContainer";
 import UpdateRoomContainer from "./UpdateRoomContainer";
 
 const tableHerders = [
@@ -45,8 +46,9 @@ const RoomTableContainer = () => {
                 <td className="p-5">{item.floorNo}</td>
                 <td className="p-5">{item.capacity}</td>
                 <td className="p-5">{item.pricePerSlot}</td>
-                <td className="p-5">
-                  {item._id} <UpdateRoomContainer id={item._id} />
+                <td className="p-5 flex items-center gap-2">
+                  <UpdateRoomContainer id={item._id} />
+                  <DeleteRoomContainer id={item._id} />
                 </td>
               </tr>
             ))}

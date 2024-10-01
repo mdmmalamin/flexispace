@@ -78,7 +78,7 @@ const UpdateRoomContainer = ({ id }: { id: string }) => {
     }
   };
 
-  const abc = async () => {
+  const updateModal = async () => {
     setRoomId(id);
     setIsModalOpen(true);
   };
@@ -86,7 +86,7 @@ const UpdateRoomContainer = ({ id }: { id: string }) => {
   return (
     <div className="">
       <button
-        onClick={abc}
+        onClick={updateModal}
         className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/80 duration-300"
       >
         Update
@@ -99,7 +99,7 @@ const UpdateRoomContainer = ({ id }: { id: string }) => {
         <Title>Update The Room</Title>
 
         <form
-          className="space-y-4"
+          className="space-y-6 my-6"
           onSubmit={handleSubmit(onSubmit)}
           onKeyDown={handleKeyDown}
         >
@@ -197,7 +197,7 @@ const UpdateRoomContainer = ({ id }: { id: string }) => {
           </div>
 
           <div className="flex items-center justify-between">
-            <FSSubmit submitType="success">Create Room</FSSubmit>
+            <FSSubmit submitType="success">Update Room</FSSubmit>
             <FSSubmit submitType="danger" onClick={() => setIsModalOpen(false)}>
               Close
             </FSSubmit>

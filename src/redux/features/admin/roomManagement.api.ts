@@ -9,6 +9,8 @@ const roomManagementApi = baseApi.injectEndpoints({
       query: (args) => {
         const params = new URLSearchParams();
 
+        params.append("isDeleted", "false");
+
         if (args) {
           args.forEach((item: TQueryParam) => {
             params.append(item.name, item.value as string);
@@ -63,6 +65,14 @@ const roomManagementApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["room"],
     }),
+
+    deleteRoom: builder.mutation({
+      query: (id) => ({
+        url: `/rooms/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["room"],
+    }),
   }),
 });
 
@@ -71,4 +81,5 @@ export const {
   useGetSingleRoomQuery,
   useAddRoomMutation,
   useUpdateRoomMutation,
+  useDeleteRoomMutation,
 } = roomManagementApi;
