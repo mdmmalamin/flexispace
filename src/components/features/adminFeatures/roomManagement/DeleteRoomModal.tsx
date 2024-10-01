@@ -14,7 +14,7 @@ const DeleteRoomModal = ({ id }: { id: string }) => {
   const [deleteRoom] = useDeleteRoomMutation();
 
   const handleDelete = async () => {
-    const toastId = toast.loading("Add New Room ...");
+    const toastId = toast.loading("Deleting Room ...");
     console.log(id);
 
     try {

@@ -68,10 +68,10 @@ const slotManagementApi = baseApi.injectEndpoints({
 
     deleteSlot: builder.mutation({
       query: (id) => ({
-        url: `/rooms/${id}`,
+        url: `/slots/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["room"],
+      invalidatesTags: ["slot"],
     }),
   }),
 });
