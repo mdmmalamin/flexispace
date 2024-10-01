@@ -6,6 +6,7 @@ export type TInputProps = {
   type?: string;
   // ...props?: any;
   register?: any;
+  defaultValue?: string;
 };
 
 const Input = ({
@@ -14,7 +15,8 @@ const Input = ({
   id = "id",
   type = "text",
   register,
-  ...props
+  // ...props,
+  defaultValue,
 }: TInputProps) => {
   return (
     <input
@@ -23,7 +25,8 @@ const Input = ({
       id={id}
       type={type}
       {...register}
-      {...props}
+      // {...props}
+      defaultValue={defaultValue}
     />
   );
 };

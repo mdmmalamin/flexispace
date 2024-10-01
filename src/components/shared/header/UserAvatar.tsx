@@ -5,8 +5,6 @@ import { useCurrentToken } from "../../../redux/features/auth/authSlice";
 import AvatarSolid from "../../../assets/icons/AvatarSolid";
 import { useState } from "react";
 import AvatarMenu from "./AvatarMenu";
-import { sidebarItemGenerator } from "../../../utils/sidebarItemGenerator";
-import { adminRoutes } from "../../../routes/admin.routes";
 
 const UserAvatar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -26,11 +24,7 @@ const UserAvatar = () => {
         >
           <AvatarSolid />
 
-          <AvatarMenu
-            isOpenMenu={isOpenMenu}
-            setIsOpenMenu={setIsOpenMenu}
-            items={sidebarItemGenerator(adminRoutes, "admin")}
-          />
+          <AvatarMenu isOpenMenu={isOpenMenu} />
         </button>
       ) : (
         <Link

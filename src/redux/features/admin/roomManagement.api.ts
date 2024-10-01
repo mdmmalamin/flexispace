@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TRoom } from "../../../types";
 import { TQueryParam, TResponseRedux } from "../../../types/global";
 import { baseApi } from "../../api/baseApi";
@@ -29,40 +30,45 @@ const roomManagementApi = baseApi.injectEndpoints({
       },
     }),
 
-    // getAllCourses: builder.query({
-    //   query: (args) => {
-    //     const params = new URLSearchParams();
+    getSingleRoom: builder.query({
+      query: (id) => {
+        return {
+          url: `/rooms/${id}`,
+          method: "GET",
+        };
+      },
 
-    //     if (args) {
-    //       args.forEach((item: TQueryParam) => {
-    //         params.append(item.name, item.value as string);
-    //       });
-    //     }
+      transformResponse: (response: TResponseRedux<any>) => {
+        return {
+          data: response.data,
+          meta: response.meta,
+        };
+      },
+    }),
 
-    //     return {
-    //       url: "/courses",
-    //       method: "GET",
-    //       params: params,
-    //     };
-    //   },
-    //   providesTags: ["courses"],
-    //   transformResponse: (response: TResponseRedux<TCourse[]>) => {
-    //     return {
-    //       data: response.data,
-    //       meta: response.meta,
-    //     };
-    //   },
-    // }),
+    addRoom: builder.mutation({
+      query: (data) => ({
+        url: `/rooms`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["room"],
+    }),
 
-    // addCourse: builder.mutation({
-    //   query: (data) => ({
-    //     url: `/courses/create-course`,
-    //     method: "POST",
-    //     body: data,
-    //   }),
-    //   invalidatesTags: ["courses"],
-    // }),
+    updateRoom: builder.mutation({
+      query: (args) => ({
+        url: `/rooms/${args.id}`,
+        method: "PUT",
+        body: args.data,
+      }),
+      invalidatesTags: ["room"],
+    }),
   }),
 });
 
-export const { useGetAllRoomsQuery } = roomManagementApi;
+export const {
+  useGetAllRoomsQuery,
+  useGetSingleRoomQuery,
+  useAddRoomMutation,
+  useUpdateRoomMutation,
+} = roomManagementApi;

@@ -27,8 +27,8 @@ const Login = () => {
     console.log(data);
 
     const userInfo = {
-      // email: "web@programming-hero.com", //! admin
-      email: "amin@gmail.com", //! user
+      email: "web@programming-hero.com", //! admin
+      // email: "amin@gmail.com", //! user
       password: "ph-password",
     };
 

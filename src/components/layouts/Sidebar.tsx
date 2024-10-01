@@ -37,7 +37,6 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }: TSideBarProps) => {
     case userRole.USER:
       sidebarItems = sidebarItemGenerator(userRoutes, userRole.USER);
       break;
-
     default:
       break;
   }
