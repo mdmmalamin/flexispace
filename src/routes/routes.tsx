@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         children: routeGenerator(userRoutes),
       },
       {
-        path: "/user/room-details",
+        path: "/user/room-details/:id",
         element: (
           <ProtectedRoute role="user">
             <RoomDetails />

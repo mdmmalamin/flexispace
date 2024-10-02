@@ -1,8 +1,13 @@
+import UserBookingTableContainer from "../../components/features/userFeatures/UserBookingTableContainer";
+import Container from "../../components/ui/Container";
+
 const MyBookingList = () => {
   return (
-    <div>
-      <h1>MyBookingList</h1>
-    </div>
+    <main>
+      <Container className="space-y-6">
+        <UserBookingTableContainer />
+      </Container>
+    </main>
   );
 };
 

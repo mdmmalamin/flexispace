@@ -3,7 +3,7 @@ import FeaturedRoomCard from "../../cards/FeaturedRoomCard";
 import Container from "../../ui/Container";
 import Headline from "../../ui/Headline";
 import Button from "../../ui/Button";
-import { useGetAllPublicRoomsQuery } from "../../../redux/features/public/roomPublic.api";
+import { useGetAllPublicRoomsQuery } from "../../../redux/features/public/public.api";
 
 const FeaturedRoomsContainer = () => {
   const { data: roomData } = useGetAllPublicRoomsQuery(undefined);
@@ -14,7 +14,7 @@ const FeaturedRoomsContainer = () => {
 
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
         {roomData?.data?.slice(0, 5)?.map((item, idx) => (
-          <Link to="/user/room-details" key={idx}>
+          <Link to={`/user/room-details/${item.name}-${item._id}`} key={idx}>
             <FeaturedRoomCard {...item} />
           </Link>
         ))}

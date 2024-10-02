@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useGetAllPublicRoomsQuery } from "../../../redux/features/public/roomPublic.api";
+import { useGetAllPublicRoomsQuery } from "../../../redux/features/public/public.api";
 import MeetingRoomCard from "../../cards/MeetingRoomCard";
 
 const RoomItemsContainer = () => {
@@ -8,7 +8,7 @@ const RoomItemsContainer = () => {
   return (
     <div className="space-y-4">
       {roomData?.data?.map((item, idx) => (
-        <Link to="/user/room-details" key={idx}>
+        <Link to={`/user/room-details/${item.name}-${item._id}`} key={idx}>
           <MeetingRoomCard {...item} />
         </Link>
       ))}

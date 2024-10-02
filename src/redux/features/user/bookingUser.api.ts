@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { TRoom } from "../../../types";
+import { TBooking } from "../../../types/bookingManagement.type";
 import { TQueryParam, TResponseRedux } from "../../../types/global";
 import { baseApi } from "../../api/baseApi";
 
@@ -18,13 +17,13 @@ const bookingUserApi = baseApi.injectEndpoints({
         }
 
         return {
-          url: "/bookings",
+          url: "/my-bookings",
           method: "GET",
           params: params,
         };
       },
       providesTags: ["booking"],
-      transformResponse: (response: TResponseRedux<TRoom[]>) => {
+      transformResponse: (response: TResponseRedux<TBooking[]>) => {
         return {
           data: response.data,
           meta: response.meta,
