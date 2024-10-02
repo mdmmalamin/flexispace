@@ -11,19 +11,10 @@ import FSTimePicker from "../../../form/FSTimePicker";
 import { TSlot } from "../../../../types/slotManagement.type";
 import { useUpdateSlotMutation } from "../../../../redux/features/admin/slotManagement.api";
 
-const UpdateSlotModal = ({
-  _id,
-  room,
-  date,
-  startTime,
-  endTime,
-  isBooked,
-}: TSlot) => {
+const UpdateSlotModal = ({ _id, date, startTime, endTime }: TSlot) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { control, register, handleSubmit } = useForm<TSlot>();
+  const { control, handleSubmit } = useForm<TSlot>();
   const [isSubmit, setIsSubmit] = useState(false);
-
-  const [slotId, setSlotId] = useState("");
 
   const [updateSlot] = useUpdateSlotMutation();
 
@@ -33,29 +24,25 @@ const UpdateSlotModal = ({
     }
   };
   const onSubmit: SubmitHandler<TSlot> = async (data) => {
-    // const toastId = toast.loading("Add New Room ...");
-    // setIsSubmit(true);
+    const toastId = toast.loading("Update Slot ...");
+    setIsSubmit(true);
 
-    // const roomInfo = {
-    //   name: data.name || slot.room.name,
-    //   roomNo: +data.roomNo || slot.room.roomNo,
-    //   date: data.date || room.floorNo,
-    //   startTime: data.startTime || slot.startTime,
-    //   endTime: data.endTime || slot.endTime,
-    // };
-    // console.log(roomInfo);
+    const slotInfo = {
+      date: data.date || date,
+      startTime: data.startTime || startTime,
+      endTime: data.endTime || endTime,
+    };
+    console.log(slotInfo);
 
-    // try {
-    //   const res = await updateRoom({ data: roomInfo, id });
-    //   setIsSubmit(false);
-    //   toast.success(res.data.message, { id: toastId, duration: 2000 });
-    //   setIsModalOpen(false);
-    //   console.log(res);
-    // } catch (error) {
-    //   toast.error("Something went wrong", { id: toastId, duration: 2000 });
-    // }
-
-    console.log(data);
+    try {
+      const res = await updateSlot({ data: slotInfo, id: _id });
+      setIsSubmit(false);
+      toast.success(res.data.message, { id: toastId, duration: 2000 });
+      setIsModalOpen(false);
+      console.log(res);
+    } catch (error) {
+      toast.error("Something went wrong", { id: toastId, duration: 2000 });
+    }
   };
 
   return (

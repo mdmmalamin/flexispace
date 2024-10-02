@@ -5,20 +5,19 @@ import { toast } from "sonner";
 import LoadingAnimation from "../../../../assets/icons/LoadingAnimation";
 import DeleteSolid from "../../../../assets/icons/DeleteSolid";
 import Subtitle from "../../../ui/Subtitle";
-import { useDeleteSlotMutation } from "../../../../redux/features/admin/slotManagement.api";
-import { TSlot } from "../../../../types/slotManagement.type";
+import { useDeleteBookingMutation } from "../../../../redux/features/admin/bookingManagement.api";
 
-const DeleteSlotModal = ({ _id }: TSlot) => {
+const DeleteBookingModal = ({ id }: { id: string }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const [deleteSlot] = useDeleteSlotMutation();
+  const [deleteBooking] = useDeleteBookingMutation();
 
   const handleDelete = async () => {
-    const toastId = toast.loading("Deleting Slot ...");
+    const toastId = toast.loading("Deleting Booking ...");
 
     try {
-      const res = await deleteSlot(_id);
+      const res = await deleteBooking(id);
       setIsSubmit(false);
       toast.success(res.data.message, { id: toastId, duration: 2000 });
       setIsModalOpen(false);
@@ -27,12 +26,9 @@ const DeleteSlotModal = ({ _id }: TSlot) => {
     }
   };
 
-  const updateModal = async () => {
-    setIsModalOpen(true);
-  };
   return (
     <div>
-      <FSSubmit onClick={updateModal}>
+      <FSSubmit onClick={() => setIsModalOpen(true)}>
         <DeleteSolid />
       </FSSubmit>
 
@@ -40,10 +36,7 @@ const DeleteSlotModal = ({ _id }: TSlot) => {
         isModalOpen={isModalOpen}
         onCloseModal={() => setIsModalOpen(false)}
       >
-        <Subtitle>
-          Are you sure you want to remove this slot? <br />
-          If you continue, this slot permanently DELETED!
-        </Subtitle>
+        <Subtitle>Are you sure you want to delete this booking?</Subtitle>
 
         <div className="flex items-center justify-between py-6">
           <FSSubmit submitType="danger" onClick={handleDelete}>
@@ -67,4 +60,4 @@ const DeleteSlotModal = ({ _id }: TSlot) => {
   );
 };
 
-export default DeleteSlotModal;
+export default DeleteBookingModal;
