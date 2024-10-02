@@ -47,8 +47,8 @@ const SlotTableContainer = () => {
                 <td className="p-5">{item.startTime}</td>
                 <td className="p-5">{item.endTime}</td>
                 <td className="p-5 flex items-center gap-2">
-                  <UpdateSlotModal id={item._id} />
-                  <DeleteSlotModal id={item._id} />
+                  <UpdateSlotModal item={item} />
+                  <DeleteSlotModal item={item} />
                 </td>
               </tr>
             ))}

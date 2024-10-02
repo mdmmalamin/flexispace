@@ -35,7 +35,7 @@ const slotManagementApi = baseApi.injectEndpoints({
     getSingleSlot: builder.query({
       query: (id) => {
         return {
-          url: `/rooms/${id}`,
+          url: `/slots/${id}`,
           method: "GET",
         };
       },
@@ -50,20 +50,20 @@ const slotManagementApi = baseApi.injectEndpoints({
 
     addSlot: builder.mutation({
       query: (data) => ({
-        url: `/rooms`,
+        url: `/slots`,
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ["room"],
+      invalidatesTags: ["slot"],
     }),
 
     updateSlot: builder.mutation({
       query: (args) => ({
-        url: `/rooms/${args.id}`,
+        url: `/slots/${args.id}`,
         method: "PUT",
         body: args.data,
       }),
-      invalidatesTags: ["room"],
+      invalidatesTags: ["slot"],
     }),
 
     deleteSlot: builder.mutation({

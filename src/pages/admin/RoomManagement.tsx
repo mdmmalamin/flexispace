@@ -5,8 +5,8 @@ import Title from "../../components/ui/Title";
 
 const RoomManagement = () => {
   return (
-    <Container>
-      <div className="flex justify-between gap-5">
+    <Container className="space-y-6">
+      <div className="flex items-center justify-between gap-5">
         <Title className="!text-left my-2">Room Table</Title>
 
         <CreateRoomModal />

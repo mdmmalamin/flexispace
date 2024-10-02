@@ -19,7 +19,6 @@ const FSSubmit = ({
   className,
   submitType = "default",
 }: TSubmit) => {
-  console.log(submitType);
   let bg;
   if (submitType === type.success) {
     bg = "bg-green-600 hover:bg-green-600/70";
