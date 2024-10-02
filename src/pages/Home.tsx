@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <HeroContainer />
-      <div className="space-y-24">
+      <main className="space-y-24">
         <ServiceAdsContainer />
 
         <FeaturedRoomsContainer />
@@ -19,7 +19,7 @@ const Home = () => {
         <OurSolutionsContainer />
 
         <TestimonialsContainer />
-      </div>
+      </main>
     </>
   );
 };
