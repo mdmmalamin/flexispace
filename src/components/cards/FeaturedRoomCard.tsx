@@ -1,19 +1,19 @@
-import { TFeaturedRoomProps } from "../../types/TCardProps";
+import { TRoom } from "../../types";
 import BlurBg from "../ui/BlurBg";
 import Button from "../ui/Button";
 
 const FeaturedRoomCard = ({
-  image,
+  // image,
   name,
   capacity,
   pricePerSlot,
-}: TFeaturedRoomProps) => {
+}: TRoom) => {
   return (
     <BlurBg className="hover:bg-secondary/20 duration-300 p-4 group">
       <div className="overflow-hidden rounded-md">
         <img
           className="rounded-md size-full object-cover object-center group-hover:scale-110 duration-300"
-          src={image}
+          src="https://ctfassets.imgix.net/vh7r69kgcki3/46VeGE2tnqmkRLYI6VEJeh/9e35ea0ec8c67569128be3f0bccff6eb/Web_150DPI-20221216_WeWork_Product_Shoot_Q4_3.jpg?auto=format%20compress&fit=crop&q=50&w=500px"
           alt={`Picture of ${name}.`}
         />
       </div>
