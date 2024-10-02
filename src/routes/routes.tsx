@@ -12,6 +12,8 @@ import { adminRoutes } from "./admin.routes";
 import { userRoutes } from "./user.routes";
 import DashboardLayout from "../components/layouts/DashboardLayout";
 import ProtectedRoute from "../components/layouts/ProtectedRoute";
+import RoomDetails from "../pages/user/RoomDetails";
+import BookingProcess from "../pages/user/BookingProcess";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,22 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         children: routeGenerator(userRoutes),
+      },
+      {
+        path: "/user/room-details",
+        element: (
+          <ProtectedRoute role="user">
+            <RoomDetails />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/user/booking-process",
+        element: (
+          <ProtectedRoute role="user">
+            <BookingProcess />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "",

@@ -14,7 +14,9 @@ const FeaturedRoomsContainer = () => {
 
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
         {roomData?.data?.slice(0, 5)?.map((item, idx) => (
-          <FeaturedRoomCard {...item} key={idx} />
+          <Link to="/user/room-details" key={idx}>
+            <FeaturedRoomCard {...item} />
+          </Link>
         ))}
       </div>
 
