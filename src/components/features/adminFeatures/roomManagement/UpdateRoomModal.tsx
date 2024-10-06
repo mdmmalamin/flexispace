@@ -66,14 +66,14 @@ const UpdateRoomModal = ({ id }: { id: string }) => {
       pricePerSlot: +data.pricePerSlot || room.pricePerSlot,
       amenities: [...options!.map((item) => item.value)] || room.amenities,
     };
-    console.log(roomInfo);
+    // console.log(roomInfo);
 
     try {
       const res = await updateRoom({ data: roomInfo, id });
       setIsSubmit(false);
       toast.success(res.data.message, { id: toastId, duration: 2000 });
       setIsModalOpen(false);
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }

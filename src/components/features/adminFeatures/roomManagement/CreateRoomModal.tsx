@@ -42,6 +42,7 @@ const CreateRoomModal = () => {
       event.preventDefault();
     }
   };
+
   const onSubmit: SubmitHandler<TRoomFormValues> = async (data) => {
     const toastId = toast.loading("Add New Room ...");
     setIsSubmit(true);
@@ -54,7 +55,7 @@ const CreateRoomModal = () => {
       pricePerSlot: +data.pricePerSlot,
       amenities: [...options!.map((item) => item.value)],
     };
-    console.log(room);
+    // console.log(room);
 
     try {
       const res = await createRoom(room);
@@ -62,7 +63,7 @@ const CreateRoomModal = () => {
       toast.success(res.data.message, { id: toastId, duration: 2000 });
       setIsModalOpen(false);
 
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }

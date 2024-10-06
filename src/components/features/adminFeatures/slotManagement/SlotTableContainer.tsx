@@ -15,7 +15,7 @@ const tableHerders = [
 
 const SlotTableContainer = () => {
   const { data: slotData, isLoading } = useGetAllSlotsQuery(undefined);
-  console.log(slotData);
+  // console.log(slotData);
   return (
     <section>
       <div

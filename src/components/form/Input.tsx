@@ -7,6 +7,7 @@ export type TInputProps = {
   // ...props?: any;
   register?: any;
   defaultValue?: string;
+  disabled?: boolean;
 };
 
 const Input = ({
@@ -17,6 +18,7 @@ const Input = ({
   register,
   // ...props,
   defaultValue,
+  disabled = false,
 }: TInputProps) => {
   return (
     <input
@@ -27,6 +29,7 @@ const Input = ({
       {...register}
       // {...props}
       defaultValue={defaultValue}
+      disabled={disabled}
     />
   );
 };

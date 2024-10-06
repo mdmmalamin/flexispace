@@ -27,7 +27,7 @@ export const sidebarItemGenerator = (items: TUserPath[], role: string) => {
     return acc;
   }, []);
 
-  // console.log(sidebarItems);
+  // // console.log(sidebarItems);
 
   return sidebarItems;
 };

@@ -32,7 +32,7 @@ const SignUp = () => {
 
   const onSubmit: SubmitHandler<TSignUp> = async (data) => {
     const toastId = toast.loading("Sign up processing ...");
-    console.log(data);
+    // console.log(data);
 
     const userInfo = {
       email: data.email,
@@ -41,11 +41,11 @@ const SignUp = () => {
 
     try {
       const res = await createUser(data);
-      console.log(res);
+      // console.log(res);
       toast.success("Sign up successful.", { id: toastId, duration: 2000 });
 
       const loginRes = await login(userInfo).unwrap();
-      console.log(loginRes);
+      // console.log(loginRes);
 
       const user = verifyToken(loginRes.token) as TUser;
       dispatch(setUser({ user: user, token: loginRes.token }));

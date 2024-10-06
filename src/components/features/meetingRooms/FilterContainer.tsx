@@ -6,7 +6,7 @@ const FilterContainer = ({
   capacity,
   setCapacity,
 }: TFilterProps) => {
-  console.log({ price, setPrice, capacity, setCapacity });
+  // console.log({ price, setPrice, capacity, setCapacity });
   return <div>FilterContainer</div>;
 };
 

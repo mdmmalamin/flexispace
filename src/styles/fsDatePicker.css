@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.calendar-day:not(.disabled):hover {
+  background-color: #17af26;
+  color: white;
+}

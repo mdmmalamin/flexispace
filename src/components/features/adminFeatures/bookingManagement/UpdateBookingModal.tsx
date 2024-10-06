@@ -9,7 +9,7 @@ import { useUpdateBookingMutation } from "../../../../redux/features/admin/booki
 import AlertSolid from "../../../../assets/icons/AlertSolid";
 
 const UpdateBookingModal = ({ _id, isConfirmed }: TBooking) => {
-  console.log(isConfirmed);
+  // console.log(isConfirmed);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -31,7 +31,7 @@ const UpdateBookingModal = ({ _id, isConfirmed }: TBooking) => {
         duration: 2000,
       });
       setIsModalOpen(false);
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }
@@ -52,7 +52,7 @@ const UpdateBookingModal = ({ _id, isConfirmed }: TBooking) => {
         duration: 2000,
       });
       setIsModalOpen(false);
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }

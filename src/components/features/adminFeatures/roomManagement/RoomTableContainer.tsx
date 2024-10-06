@@ -15,7 +15,7 @@ const tableHerders = [
 
 const RoomTableContainer = () => {
   const { data: roomData, isLoading } = useGetAllRoomsQuery(undefined);
-  console.log(roomData);
+  // console.log(roomData);
   return (
     <section>
       <div

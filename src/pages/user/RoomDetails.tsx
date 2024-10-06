@@ -5,10 +5,10 @@ import Container from "../../components/ui/Container";
 
 const RoomDetails = () => {
   const { state } = useLocation();
-  console.log(state);
+  // console.log(state);
   return (
     <main className="space-y-24">
-      <Container className="grid col-span-1 sm:grid-cols-4 my-6">
+      <Container className="grid col-span-1 sm:grid-cols-4 gap-6 my-6">
         <RoomImgContainer />
 
         <RoomInfoContainer {...state} />

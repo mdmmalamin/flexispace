@@ -15,7 +15,7 @@ const DeleteRoomModal = ({ id }: { id: string }) => {
 
   const handleDelete = async () => {
     const toastId = toast.loading("Deleting Room ...");
-    console.log(id);
+    // console.log(id);
 
     try {
       const res = await deleteRoom(id);

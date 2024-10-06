@@ -47,14 +47,14 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      {
-        path: "/user/booking-process",
-        element: (
-          <ProtectedRoute role="user">
-            <BookingProcess />
-          </ProtectedRoute>
-        ),
-      },
+      // {
+      //   path: "/user/booking-process/:id",
+      //   element: (
+      //     <ProtectedRoute role="user">
+      //       <BookingProcess />
+      //     </ProtectedRoute>
+      //   ),
+      // },
       {
         path: "",
         element: <Home />,

@@ -12,3 +12,10 @@ export type TBooking = {
   isConfirmed: string;
   isDeleted: boolean;
 };
+
+export type TUserBooking = {
+  date: string;
+  slots: string[];
+  room: string;
+  user: string;
+};

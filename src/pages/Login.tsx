@@ -21,10 +21,10 @@ const Login = () => {
   const dispatch = useAppDispatch();
 
   const [login, { data, error }] = useLoginMutation();
-  console.log({ data, error });
+  // console.log({ data, error });
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    console.log(data);
+    // console.log(data);
 
     const userInfo = {
       // email: "web@programming-hero.com", //! admin
@@ -36,7 +36,7 @@ const Login = () => {
 
     try {
       const res = await login(userInfo).unwrap();
-      console.log(res);
+      // console.log(res);
 
       const user = verifyToken(res.token) as TUser;
       dispatch(setUser({ user: user, token: res.token }));

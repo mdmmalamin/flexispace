@@ -13,7 +13,7 @@ const tableHerders = [
 
 const UserBookingTableContainer = () => {
   const { data: myBookings, isLoading } = useGetMyBookingQuery(undefined);
-  console.log(myBookings);
+  // console.log(myBookings);
   return (
     <section>
       <div

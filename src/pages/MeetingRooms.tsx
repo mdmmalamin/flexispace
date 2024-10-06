@@ -15,7 +15,7 @@ const MeetingRooms = () => {
     capacity,
   };
 
-  console.log(filter);
+  // console.log(filter);
   return (
     <Container className="my-6 md:my-16">
       <div className="grid gap-6 md:grid-cols-12">

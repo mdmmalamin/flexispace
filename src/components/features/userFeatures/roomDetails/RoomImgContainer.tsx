@@ -25,7 +25,7 @@ const RoomImgContainer = () => {
 
   return (
     <>
-      <div className="col-span-1 sm:col-span-3 w-full p-6">
+      <div className="col-span-1 sm:col-span-3 w-full">
         <div className="grid grid-cols-12 gap-3">
           {imgs?.map((item, idx) => (
             <div
@@ -37,7 +37,7 @@ const RoomImgContainer = () => {
                 ${idx >= 3 && "hidden"}`}
             >
               <img
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center rounded-md"
                 src={item}
                 alt={`Picture of ${item}.`}
               />
@@ -45,7 +45,7 @@ const RoomImgContainer = () => {
           ))}
         </div>
 
-        <div className="relative w-full h-20 p-2 my-3 bg-accent/20 border border-accent/30 shadow-sm rounded-md overflow-hidden">
+        <div className="relative w-full h-20 p-2 my-3 bg-accent/10 border border-accent/30 shadow-sm rounded-md overflow-hidden">
           {/* Left Scroll Button */}
           <button
             onClick={() => scroll("left")}
@@ -61,7 +61,7 @@ const RoomImgContainer = () => {
           >
             {imgs?.map((item, idx) => (
               <img
-                className="w-fit h-full object-cover object-center"
+                className="w-fit h-full object-cover object-center grow"
                 // className=""
                 src={item}
                 alt={`Picture of ${item}.`}

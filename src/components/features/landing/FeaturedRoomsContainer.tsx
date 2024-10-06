@@ -15,7 +15,7 @@ const FeaturedRoomsContainer = () => {
 
       {isLoading && (
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
-          {[...Array(5)].map((item, idx) => (
+          {[...Array(5)].map((_, idx) => (
             <CardSkeleton flex={true} key={idx} />
           ))}
         </div>

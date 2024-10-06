@@ -18,7 +18,7 @@ const CreateSlotModal = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const { data: roomData } = useGetAllRoomsQuery(undefined);
-  console.log(roomData?.data);
+  // console.log(roomData?.data);
   const options = roomData?.data?.map((item) => ({
     label: item.name,
     value: item._id,
@@ -35,7 +35,7 @@ const CreateSlotModal = () => {
     const toastId = toast.loading("Add New Room ...");
     setIsSubmit(true);
 
-    console.log(data);
+    // console.log(data);
 
     try {
       const res = await createSlot(data);
@@ -43,7 +43,7 @@ const CreateSlotModal = () => {
       toast.success(res.data.message, { id: toastId, duration: 2000 });
       setIsModalOpen(false);
 
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }

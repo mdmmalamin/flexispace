@@ -32,14 +32,14 @@ const UpdateSlotModal = ({ _id, date, startTime, endTime }: TSlot) => {
       startTime: data.startTime || startTime,
       endTime: data.endTime || endTime,
     };
-    console.log(slotInfo);
+    // console.log(slotInfo);
 
     try {
       const res = await updateSlot({ data: slotInfo, id: _id });
       setIsSubmit(false);
       toast.success(res.data.message, { id: toastId, duration: 2000 });
       setIsModalOpen(false);
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }

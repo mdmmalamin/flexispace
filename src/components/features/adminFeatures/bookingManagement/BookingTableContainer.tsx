@@ -16,7 +16,7 @@ const tableHerders = [
 
 const BookingTableContainer = () => {
   const { data: bookingData, isLoading } = useGetAllBookingsQuery(undefined);
-  console.log(bookingData);
+  // console.log(bookingData);
   return (
     <section>
       <div

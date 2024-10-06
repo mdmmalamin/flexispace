@@ -8,8 +8,7 @@ const RoomItemsContainer = () => {
 
   return (
     <div className="space-y-4">
-      {isLoading &&
-        [...Array(5)].map((item, idx) => <CardSkeleton key={idx} />)}
+      {isLoading && [...Array(5)].map((_, idx) => <CardSkeleton key={idx} />)}
 
       {roomData?.data?.map((item, idx) => (
         <Link

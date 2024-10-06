@@ -10,7 +10,7 @@ type TStateProps = {
 const SearchContainer = ({ setSearch }: TStateProps) => {
   const handleSearching = (data: FieldValues) => {
     setTimeout(() => {
-      console.log(data.target.value);
+      // console.log(data.target.value);
       setSearch(data.target.value);
     }, 1200);
   };
