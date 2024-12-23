@@ -20,22 +20,22 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const [login, { data, error }] = useLoginMutation();
+  const [login] = useLoginMutation();
   // console.log({ data, error });
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     // console.log(data);
 
-    const userInfo = {
-      // email: "web@programming-hero.com", //! admin
-      email: "amin@gmail.com", //! user
-      password: "ph-password",
-    };
+    // const userInfo = {
+    //   // email: "web@programming-hero.com", //! admin
+    //   email: "amin@gmail.com", //! user
+    //   password: "ph-password",
+    // };
 
     const toastId = toast.loading("Logging in");
 
     try {
-      const res = await login(userInfo).unwrap();
+      const res = await login(data).unwrap();
       // console.log(res);
 
       const user = verifyToken(res.token) as TUser;

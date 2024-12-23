@@ -16,6 +16,7 @@ import { useGetMyProfileQuery } from "../../../../redux/features/user/myProfile.
 import { useAddMyBookingMutation } from "../../../../redux/features/user/bookingUser.api";
 import FSCalendar from "../../../form/FSCalender";
 import UserPreFilledContainer from "../bookingProcess/UserPreFilledContainer";
+import { useNavigate } from "react-router-dom";
 
 const RoomInfoContainer = ({
   _id,
@@ -30,6 +31,8 @@ const RoomInfoContainer = ({
   const [isSubmit, setIsSubmit] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
   const { control, handleSubmit } = useForm<TUserBooking>();
+
+  const navigate = useNavigate();
 
   const { data: slotsDataD } = useGetAllAvailableSlotsQuery([
     { name: "roomId", value: _id },
@@ -71,9 +74,12 @@ const RoomInfoContainer = ({
 
     try {
       const res = await createBooking(bookingsInfo);
+      console.log(res);
       setIsSubmit(false);
       toast.success(res.data.message, { id: toastId, duration: 2000 });
       setIsModalOpen(false);
+
+      navigate(`/user/checkout/${bookingsInfo.date}-${res?.data?.data?._id}`);
 
       // console.log(res);
     } catch (error) {

@@ -15,6 +15,8 @@ const MeetingRooms = () => {
     capacity,
   };
 
+  console.log(filter)
+
   // console.log(filter);
   return (
     <Container className="my-6 md:my-16">

@@ -1,5 +1,5 @@
 import DashboardSolid from "../assets/icons/DashboardSolid";
-import Checkout from "../pages/user/Checkout";
+// import Checkout from "../pages/user/Checkout";
 import MyBookingList from "../pages/user/MyBookingList";
 export const userRoutes = [
   // {
@@ -14,12 +14,12 @@ export const userRoutes = [
   //   element: <BookingProcess />,
   //   icon: <BookingSolid />,
   // },
-  {
-    name: "Checkout",
-    path: "checkout",
-    element: <Checkout />,
-    icon: <DashboardSolid />,
-  },
+  // {
+  //   name: "Checkout",
+  //   path: "checkout",
+  //   element: <Checkout />,
+  //   icon: <DashboardSolid />,
+  // },
   {
     name: "My Booking List",
     path: "my-booking-list",

@@ -31,6 +31,22 @@ const bookingUserApi = baseApi.injectEndpoints({
       },
     }),
 
+    getMyBookingCheckout: builder.query({
+      query: (id) => {
+        return {
+          url: `/my-bookings/${id}`,
+          method: "GET",
+        };
+      },
+
+      transformResponse: (response: TResponseRedux<TBooking>) => {
+        return {
+          data: response.data,
+          meta: response.meta,
+        };
+      },
+    }),
+
     addMyBooking: builder.mutation({
       query: (data) => ({
         url: `/bookings`,
@@ -42,4 +58,8 @@ const bookingUserApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetMyBookingQuery, useAddMyBookingMutation } = bookingUserApi;
+export const {
+  useGetMyBookingQuery,
+  useGetMyBookingCheckoutQuery,
+  useAddMyBookingMutation,
+} = bookingUserApi;

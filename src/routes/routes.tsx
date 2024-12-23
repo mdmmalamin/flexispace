@@ -13,7 +13,7 @@ import { userRoutes } from "./user.routes";
 import DashboardLayout from "../components/layouts/DashboardLayout";
 import ProtectedRoute from "../components/layouts/ProtectedRoute";
 import RoomDetails from "../pages/user/RoomDetails";
-import BookingProcess from "../pages/user/BookingProcess";
+import Checkout from "../pages/user/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -47,14 +47,14 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      // {
-      //   path: "/user/booking-process/:id",
-      //   element: (
-      //     <ProtectedRoute role="user">
-      //       <BookingProcess />
-      //     </ProtectedRoute>
-      //   ),
-      // },
+      {
+        path: "/user/checkout/:id",
+        element: (
+          <ProtectedRoute role="user">
+            <Checkout />
+          </ProtectedRoute>
+        ),
+      },
       {
         path: "",
         element: <Home />,
